@@ -1,0 +1,35 @@
+.contenedor{
+    width: 100%;
+}
+
+.contenedor__tabla{
+    width: 100%;
+    padding-top: 20px;
+}
+.tabla__cabecera{
+    text-align: center;
+    background-color: var(--primary-100);
+    color: var(--text-300);
+    padding: 10px;
+}
+.tabla__cabecera td{
+    padding: 10px;
+}
+.contenedor__tabla tr td{
+    text-align: center;
+}
+.tabla__fila-productos{
+    background: var(--bg-200);
+}
+.tabla__fila-productos:nth-child(even){
+    background: var(--accent-200);
+}
+/* contenido de la tabla  */
+.imagen{
+    padding: 5px 0;
+}
+.imagen img{
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+}
