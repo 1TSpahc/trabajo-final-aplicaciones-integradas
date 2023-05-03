@@ -11,7 +11,7 @@ export function Editar () {
 
   return (
 
-    <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.section initial={{ opacity: 0, translateY: 20 }} animate={{ opacity: 1, translateY: 0 }}>
       <SubTitulo>Editar Producto</SubTitulo>
       <Buscar estado={setProducto} />
       {

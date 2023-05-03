@@ -1,19 +1,25 @@
 .form-busqueda{
+    margin-top: 20px;
     display: flex;
-    gap: 10px;
+    padding: 10px;
+    gap: 15px;
+    background-color: var(--buscar-form-bg);
 }
 .form-busqueda__input{
-    padding: 10px 5px;
+    padding: 12px 10px;
     outline: none;
     border: none;
-    background-color: var(--bg-200);
+    background-color: var(--buscar-form-input);
+    color: var(--buscar-form-input-texto);
     border-radius: 5px;
 }
 .form-busqueda__btn{
     outline: none;
     border: none;
     padding: 10px 20px;
-    background-color: var(--primary-200);
-    color: var(--text-300);
+    background-color: var(--buscar-form-boton-bg);
+    color: var(--buscar-form-boton-texto);
     border-radius: 5px;
+    cursor: pointer;
 }
+

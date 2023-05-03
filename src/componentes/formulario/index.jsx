@@ -12,6 +12,8 @@ import { editarDatos, eliminarDatos } from '../../servicios/API' // servicios de
 import { useLocation } from 'wouter'// hook para cambiar la ruta (url) de la pagina
 import { objetoPlantilla } from '../../servicios/API/estructuraObj'// funcion para crear un objeto con los datos del formulario pra que sea enviado a la base de datos
 
+import { motion } from 'framer-motion'
+
 export function Formulario ({ producto, textoBtn }) {
   const [pagina, setPagina] = useLocation()
 
@@ -70,7 +72,7 @@ export function Formulario ({ producto, textoBtn }) {
   }
 
   return (
-    <div className='contenedor-form'>
+    <motion.div className='contenedor-form' initial={{ opacity: 0, translateY: 20 }} animate={{ opacity: 1, translateY: 0 }}>
       <form className='form' onSubmit={enSubmit}>
         <label htmlFor='' className='form__label label'>
           Producto ID
@@ -105,7 +107,7 @@ export function Formulario ({ producto, textoBtn }) {
         <button className='form__btn' type='submit'>{textoBtn}</button>
       </form>
       <img src={`${imagenPreview  ? imagenPreview  : producto?.producto_imagen}`} alt='' /> {/* eslint-disable-line */}
-    </div>
+    </motion.div>
 
   )
 }

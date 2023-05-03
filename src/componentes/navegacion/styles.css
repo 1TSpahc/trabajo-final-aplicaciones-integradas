@@ -4,7 +4,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: var(--primary-100);
+    background-color: var(--navegacion-bg);
 
     display: flex;
     flex-direction: column;
@@ -14,7 +14,7 @@
 }
 
 .navegacion__logo {
-    color: var(--text-300);
+    color: var(--navegacion-logo-texto);
     font-weight: 400;
 }
 
@@ -34,26 +34,26 @@
 }
 
 .li-active{
-    background-color: var(--primary-200);
+    background-color: var(--navegacion-enlace-hover);
 }
 .navegacion__li:hover{
-    background-color: var(--primary-200);
+    background-color: var(--navegacion-enlace-hover);
 }
 .navegacion__enlace {
     display: block;
     text-decoration: none;
-    color: var(--text-300);
+    color: var(--navegacion-enlace-texto);
     transition: color .5s;
     padding: 10px 20px;
 }
 
 .navegacion__cerrar-sesion {
-    color: var(--text-300);
+    color: var(--navegacion-cerrar-sesion);
     font-weight: 400;
     cursor: pointer;
     transition: color .5s;
 }
 
 .navegacion__cerrar-sesion:hover {
-    color: var(--text-200);
+    color: var(--navegacion-logo-texto);
 }

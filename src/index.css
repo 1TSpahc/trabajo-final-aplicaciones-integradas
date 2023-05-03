@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;800&display=swap');
 
 :root{
-    --primary-100:#1E2022;
+  /*   --primary-100:#1E2022;
     --primary-200:#34373b;
     --primary-300:#F0F5F9;
 
@@ -16,7 +16,48 @@
     --bg-100:#F0F5F9;
     --bg-200:#C9D6DF;
     --bg-300:#bfc7d1;
-    --bg-400:#fcfcfc;
+    --bg-400:#fcfcfc; */
+
+
+    /* nuevas variables css */
+    --body-bg:#1e2022;
+
+    /* variables de la navegacion nav o sidebar */
+    --navegacion-bg: #1a1b1c;
+    --navegacion-logo-texto: #bfc7d1;
+    --navegacion-enlace-hover:#34373b;
+    --navegacion-enlace-texto:#bfc7d1;
+    --navegacion-cerrar-sesion:#9c9c9c;
+    
+    /* paginas crear, editar, eliminar entre otras */
+    --paginas-titulos: #bfc7d1;
+
+    /* productos tabla */
+    --tabla-bg: #1e2022;
+    --tabla-cabecera:#34373b;
+    --tabla-cabecera-texto: #bfc7d1;
+    --tabla-fila-bg: #252729;
+    --tabla-fila-texto:#9c9c9c;
+
+    /* crear producto */
+    --formulario-bg: #252729;
+    --formulario-label-texto: #bfc7d1;
+    --formulario-input-bg:#1e2022;
+    --formulario-input-texto:#bfc7d1;
+    --formulario-boton-bg:#1e2022;
+    --formulario-boton-texto:#bfc7d1;
+    --formulario-boton-bg-hover:#1a1b1c;
+
+    --selecion-bg: #1e2022;
+    --selecion-texto:#bfc7d1;
+
+    /* buscar */
+    --buscar-form-bg: #1a1b1c;
+    --buscar-form-input: #1e2022;
+    --buscar-form-input-texto:#bfc7d1;
+    --buscar-form-boton-bg:#34373b;
+    --buscar-form-boton-texto:#bfc7d1;
+
 
     --font: 'Poppins', sans-serif;
     --navegacion-width: 300px
@@ -30,7 +71,7 @@
 }
 body{
     font-family: var(--font);
-    background-color: var(--bg-100);
+    background-color: var(--body-bg);
     margin-left: var(--navegacion-width);
     padding: 20px;
 }

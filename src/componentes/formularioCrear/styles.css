@@ -1,7 +1,7 @@
 .contenedor-form{
     display: flex;
     gap: 10px;
-    background-color: var(--bg-200);
+    background-color: var(--formulario-bg);
     padding: 20px;
     margin-top: 20px;
 }
@@ -22,7 +22,7 @@
 }
 .form__label{
     display: block;
-    color: var(--text-200);
+    color: var(--formulario-label-texto);
 }
 
 .form__label:nth-child(1),.form__label:nth-child(2),.form__label:nth-child(5){
@@ -34,13 +34,14 @@
 
 .label__input{
     width: 100%;
-    padding: 10px 10px;
+    padding: 15px 10px;
     margin: 10px 0;
     display: block;
 
     border: none;
     outline: none;
-    background: var(--bg-400);
+    background-color: var(--formulario-input-bg);
+    color: var(--formulario-input-texto);
 }
 .form__btn{
     padding: 12px 20px;
@@ -49,6 +50,12 @@
     outline: none;
     cursor: pointer;
     border-radius: 5px;
+    background-color: var(--formulario-boton-bg);
+    color: var(--formulario-boton-texto);
+    transition: .5s;
+}
+.form__btn:hover{
+    background-color: var(--formulario-boton-bg-hover);
 }
 .contenedor-form img{
     width: 30%;

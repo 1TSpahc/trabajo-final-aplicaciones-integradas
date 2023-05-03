@@ -2,11 +2,13 @@ import { SubTitulo } from '../Textos/SubTitulos'
 import { ProductosItem } from './productosItem'
 import './styles.css'
 
+import { motion } from 'framer-motion'
+
 export function ListaProductos ({ productos }) {
   return (
     <div className='contenedor'>
       <SubTitulo>Productos de la tienda</SubTitulo>
-      <table className='contenedor__tabla'>
+      <motion.table className='contenedor__tabla' initial={{ opacity: 0, translateY: 20 }} animate={{ opacity: 1, translateY: 0 }}>
         <tbody>
           <tr className='tabla__cabecera'>
             <td>id_Producto</td>
@@ -23,7 +25,7 @@ export function ListaProductos ({ productos }) {
             })
           }
         </tbody>
-      </table>
+      </motion.table>
     </div>
   )
 }

@@ -4,12 +4,13 @@
 
 .contenedor__tabla{
     width: 100%;
-    padding-top: 20px;
+    margin-top: 20px;
+    background-color: var(--tabla-bg);
 }
 .tabla__cabecera{
     text-align: center;
-    background-color: var(--primary-100);
-    color: var(--text-300);
+    background-color: var(--tabla-cabecera);
+    color: var(--tabla-cabecera-texto);
     padding: 10px;
 }
 .tabla__cabecera td{
@@ -19,10 +20,11 @@
     text-align: center;
 }
 .tabla__fila-productos{
-    background: var(--bg-200);
+    background: var(--tabla-fila-bg);
+    color: var(--tabla-fila-texto);
 }
 .tabla__fila-productos:nth-child(even){
-    background: var(--accent-200);
+    background: var(--tabla-bg);
 }
 /* contenido de la tabla  */
 .imagen{

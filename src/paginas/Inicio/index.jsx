@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export function Inicio () {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+    <motion.div initial={{ opacity: 0, translateY: 20 }} animate={{ opacity: 1, translateY: 0 }}>
       <SubTitulo>Inicio</SubTitulo>
     </motion.div>
   )
