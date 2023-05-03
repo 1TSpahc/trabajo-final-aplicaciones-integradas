@@ -8,10 +8,12 @@ import { Productos } from './paginas/Productos'
 import { Crear } from './paginas/Crear'
 import { Editar } from './paginas/Editar'
 import { Eliminar } from './paginas/Eliminar'
+import { Login } from './paginas/Login'
 
 function App () {
   return (
     <ContextProvider>
+      <Route path='/login' component={Login} />
       <Navegacion />
       <Route path='/' component={Inicio} />
       <Route path='/productos' component={Productos} />

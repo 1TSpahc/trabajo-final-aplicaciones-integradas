@@ -33,6 +33,7 @@
     --formulario-boton-bg: #4e8be1;
     --formulario-boton-texto:#ffffff;
     --formulario-boton-bg-hover:#3c7cd5;
+    --formulario-boton-bg-hover-texto: #fff;
 
     --selecion-bg: #dcdde0;
     --selecion-texto:#0a0a0a;
@@ -55,9 +56,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    font-family: var(--font);
+html,body{
+    height: 100%;
     background-color: var(--body-bg);
+    font-family: var(--font);
+}
+#root{
     margin-left: var(--navegacion-width);
     padding: 20px;
 }
@@ -96,6 +100,8 @@ body{
      --formulario-boton-bg: #1b1e23;
      --formulario-boton-texto:#bfc7d1;
      --formulario-boton-bg-hover:#02c29b;
+     --formulario-boton-bg-hover-texto: #000;
+
  
      --selecion-bg: #1b1e23;
      --selecion-texto:#bfc7d1;
