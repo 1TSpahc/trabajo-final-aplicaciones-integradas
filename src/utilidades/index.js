@@ -117,3 +117,5 @@ export const crearImagenPreview = (event) => {
     url
   }
 }
+
+// Encryptar la contrasena para enviarla a la base de datos

@@ -8,7 +8,7 @@ export function Lista () {
     {
       icono: IconoCasa,
       texto: 'Inicio',
-      url: '/',
+      url: '/inicio',
       active: true
     },
     {

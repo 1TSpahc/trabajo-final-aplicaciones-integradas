@@ -29,3 +29,5 @@ export async function eliminarDatos (id) {
 
   return status
 }
+
+/* --------------------------- autenticar al administrador -------------------- */

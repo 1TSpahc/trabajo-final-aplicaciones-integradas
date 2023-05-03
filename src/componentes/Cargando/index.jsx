@@ -6,7 +6,7 @@ export function Cargando () {
       size={80}
       lineWeight={5}
       speed={1.4}
-      color='white'
+      color='black'
     />
   )
 }
