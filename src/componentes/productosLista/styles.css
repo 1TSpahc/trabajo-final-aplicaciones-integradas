@@ -24,7 +24,7 @@
     color: var(--tabla-fila-texto);
 }
 .tabla__fila-productos:nth-child(even){
-    background: var(--tabla-bg);
+    background: var(--tabla-fila-bg-even);
 }
 /* contenido de la tabla  */
 .imagen{

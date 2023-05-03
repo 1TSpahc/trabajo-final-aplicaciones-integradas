@@ -1,29 +1,36 @@
 import { useState } from 'react'
 import { Link } from 'wouter'
 
+import { IconoCasa, IconoLista, IconoCrear, IconoEditar, IconoEliminar } from '../../iconos'
+
 export function Lista () {
   const links = [
     {
+      icono: IconoCasa,
       texto: 'Inicio',
       url: '/',
       active: true
     },
     {
+      icono: IconoLista,
       texto: 'Productos',
       url: '/productos',
       active: false
     },
     {
+      icono: IconoCrear,
       texto: 'Crear',
       url: '/crear',
       active: false
     },
     {
+      icono: IconoEditar,
       texto: 'Editar',
       url: '/editar',
       active: false
     },
     {
+      icono: IconoEliminar,
       texto: 'Eliminar',
       url: '/eliminar',
       active: false
@@ -62,7 +69,10 @@ export function Lista () {
             enlaces.map((enlace, index) => {
               return (
                 <li key={index} className={`navegacion__li ${enlace.active ? 'li-active' : ''}`} onClick={() => manejadorDeClick(enlace)}>
-                  <Link to={enlace.url} className='navegacion__enlace'>{enlace.texto}</Link>
+                  <Link to={enlace.url} className='navegacion__enlace'>
+                    <enlace.icono />
+                    {enlace.texto}
+                  </Link>
                 </li>
               )
             })

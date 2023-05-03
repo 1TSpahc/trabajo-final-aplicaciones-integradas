@@ -1,0 +1,6 @@
+svg{
+    width: 25px;
+}
+svg g{
+    fill: var(--paginas-titulos);
+}

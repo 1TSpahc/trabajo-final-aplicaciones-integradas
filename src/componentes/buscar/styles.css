@@ -12,6 +12,12 @@
     background-color: var(--buscar-form-input);
     color: var(--buscar-form-input-texto);
     border-radius: 5px;
+    border: 2px solid transparent;
+    transition: .5s;
+}
+
+.form-busqueda__input:focus{
+    border: 2px solid var(--buscar-form-input-border-bg);
 }
 .form-busqueda__btn{
     outline: none;

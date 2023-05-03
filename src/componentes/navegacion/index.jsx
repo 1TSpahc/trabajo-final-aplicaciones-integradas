@@ -1,5 +1,7 @@
 import './styles.css'
 import { Lista } from './lista'
+import { Extra } from './extra'
+import { IconoCerrarSesion } from '../iconos'
 
 export function Navegacion () {
   return (
@@ -7,8 +9,12 @@ export function Navegacion () {
       <h1 className='navegacion__logo'>Sport Center</h1>
       <ul className='navegacion__ul'>
         <Lista />
+        <Extra />
       </ul>
-      <h3 className='navegacion__cerrar-sesion'>Cerrar sesion</h3>
+      <div className='navegacion__cerrar-sesion'>
+        <IconoCerrarSesion />
+        Cerrar sesion
+      </div>
     </nav>
   )
 }
