@@ -1,5 +1,7 @@
 // formatear la fecha
 
+import { useLocation } from 'wouter'
+
 const diaDeSemanas = [
   {
     numero: 0,
@@ -118,4 +120,18 @@ export const crearImagenPreview = (event) => {
   }
 }
 
-// Encryptar la contrasena para enviarla a la base de datos
+// Generar token
+
+export function generarNuevoToken () {
+  return window.crypto.randomUUID()
+}
+
+// el usuario esta log
+export function validarUsuario () {
+  const [pagina, setPagina] = useLocation()
+  const usuario = obtenerLocalStorage('usuario')
+
+  if (!usuario) {
+    setPagina('/')
+  }
+}

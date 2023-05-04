@@ -1,0 +1,22 @@
+.pagina-no-encontrada{
+    background-color: var(--body-bg);
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.pagina-no-encontrada__btn{
+    padding: 7px 20px;
+    background-color: var(--formulario-boton-bg);
+    color: var(--formulario-boton-texto);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: .5s;
+}
+.pagina-no-encontrada__btn:hover{
+    background-color: var(--formulario-boton-bg-hover);
+    color: var(--formulario-boton-texto-hover);
+}

@@ -12,7 +12,9 @@
     justify-content: space-around;
     padding: 0 20px;
 }
-
+.desactivar .navegacion{
+    display: none;
+}
 .navegacion__logo {
     color: var(--navegacion-logo-texto);
     font-weight: 400;

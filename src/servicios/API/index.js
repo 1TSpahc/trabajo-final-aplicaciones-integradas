@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { anonKey, apiUrl } from '../config'
 
-/* --------------------------- Funciones Crud -------------------- */
+/* --------------------------- Funciones CRUD -------------------- */
 
 const supabaseUrl = apiUrl
 const supabaseKey = anonKey
@@ -30,4 +30,13 @@ export async function eliminarDatos (id) {
   return status
 }
 
-/* --------------------------- autenticar al administrador -------------------- */
+/* actualizar admin */
+
+export async function editarCredencialesDelAdmin (datos = {}, id) {
+  const { status } = await supabase
+    .from('admin')
+    .update(datos)
+    .eq('id', id)
+
+  return status
+}

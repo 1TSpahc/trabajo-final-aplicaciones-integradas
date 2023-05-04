@@ -1,4 +1,4 @@
-import { obtenerLocalStorage } from '../../../utilidades'
+import { generarNuevoToken, obtenerLocalStorage } from '../../../utilidades'
 
 /* const crearObjeto = (event, respuestaCloudinary = null) => {
   const { productosId, nombre, precio, stock } = Object.fromEntries(new FormData(event.target))
@@ -25,5 +25,15 @@ export function objetoPlantilla (event, respuestaCloudinary = null, valorDefault
     producto_categoria: obtenerLocalStorage('categoria') ?? valorDefault.producto_categoria,
     producto_imagen: respuestaCloudinary ?? valorDefault.producto_imagen,
     created_at: new Date()
+  }
+}
+
+export function objetoPlantillaAdmin (admin) {
+  const nuevoToken = generarNuevoToken()
+
+  return {
+    admin_correo: admin.admin_correo,
+    admin_password: admin.admin_password,
+    admin_sesion: nuevoToken
   }
 }
