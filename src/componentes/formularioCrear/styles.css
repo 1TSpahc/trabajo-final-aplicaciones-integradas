@@ -43,7 +43,7 @@
     background-color: var(--formulario-input-bg);
     color: var(--formulario-input-texto);
 }
-.form__btn{
+.form__btn,.desactivar-btn,.activar-btn{
     padding: 12px 20px;
     margin: 10px 0;
     border: none;
@@ -53,6 +53,16 @@
     background-color: var(--formulario-boton-bg);
     color: var(--formulario-boton-texto);
     transition: .5s;
+}
+.desactivar-btn{
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.activar-btn{
+    pointer-events: all;
+    opacity: 1;
+    cursor: auto;
 }
 .form__btn:hover{
     background-color: var(--formulario-boton-bg-hover);

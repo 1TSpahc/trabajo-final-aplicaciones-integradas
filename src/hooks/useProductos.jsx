@@ -15,6 +15,7 @@ export function useProductos () {
 
   return {
     cargando,
-    productos
+    productos,
+    setProductos
   }
 }

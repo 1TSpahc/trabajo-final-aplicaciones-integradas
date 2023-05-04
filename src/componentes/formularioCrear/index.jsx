@@ -14,6 +14,7 @@ import { Notificacion } from '../notificacion'
 export function FormularioCrear () {
   const [pagina, setPagina] = useLocation()
   const [statusCreacion, setStatusCreacion] = useState(null)
+  const [activarBoton, setActivarBoton] = useState(true)
 
   //  Creamos los estados para el productoId, achiveCloud y la imagenPreview
   const [productoId, setProductoId] = useState('')
@@ -32,21 +33,21 @@ export function FormularioCrear () {
 
   const enSubmit = (e) => {
     e.preventDefault()
-    generarProductoId()
+
     subirImagen(archivoCloud).then((imagen) => {
       const nuevoProducto = objetoPlantilla(e, imagen.url, imagenDefault)
       insertarDatos(nuevoProducto)
       setStatusCreacion(true)
+      setActivarBoton(false)
     })
   }
 
   /* ---------------Generar el id del producto cuando el usuario entre al formulario para crear un producto -------------------- */
 
   const generarProductoId = () => {
-    const longitud = productos.length - 1
-    const idDelUltimoProducto = productos[longitud].id
-    const nuevoCodigoProducto = `PECH4P5T1-${idDelUltimoProducto + 1}`
-    setProductoId(nuevoCodigoProducto)
+    const idDelUltimoProducto = productos.reduce((prev, current) => (prev.id > current.id) ? prev : current).id
+    const idGenerado = `PECH4P5T1-${idDelUltimoProducto + 1}`
+    return idGenerado
   }
 
   /* ---------------Esta funcion se encarga de mostrar visualmente la imagen cuando el usuario la selecciona en su administrador de archivos -------------------- */
@@ -55,6 +56,10 @@ export function FormularioCrear () {
     const { file, url } = crearImagenPreview(event)
     setArchivoCloud(file)
     setImagenPreview(url)
+
+    // tambien generamos el ID del producto
+    const idGenerado = generarProductoId()
+    setProductoId(idGenerado)
   }
 
   /* ---------------El useEffect es un hook de react que permite qjecutar codigo cuando el componente (formulario) este montado -------------------- */
@@ -101,7 +106,7 @@ export function FormularioCrear () {
             <input type='file' name='imagen' id='imagenProducto' className='label__input' accept='.jpg, .png, .jpeg, .webp' onChange={generarImagen} required />
           </label>
 
-          <button className='form__btn' type='submit'>Crear Producto</button>
+          <button className={`form__btn ${activarBoton ? 'activar-btn' : 'desactivar-btn'}`} type='submit'>Crear Producto</button>
         </form>
       <img src={`${imagenPreview ? imagenPreview: imagenDefault}`} alt='imagen del producto' /> {/* eslint-disable-line */}
       </div>

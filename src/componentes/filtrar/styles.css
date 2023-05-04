@@ -1,0 +1,9 @@
+.contenedor-filtros{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.categoria-contenedor--filtrar{
+    width: 300px !important;
+}
