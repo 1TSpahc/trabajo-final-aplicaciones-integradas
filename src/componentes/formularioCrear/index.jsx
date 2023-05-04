@@ -9,9 +9,11 @@ import { subirImagen } from '../../servicios/cloudinary'
 import { insertarDatos } from '../../servicios/API'
 import { objetoPlantilla } from '../../servicios/API/estructuraObj'
 import { useProductos } from '../../hooks/useProductos'
+import { Notificacion } from '../notificacion'
 
 export function FormularioCrear () {
   const [pagina, setPagina] = useLocation()
+  const [statusCreacion, setStatusCreacion] = useState(null)
 
   //  Creamos los estados para el productoId, achiveCloud y la imagenPreview
   const [productoId, setProductoId] = useState('')
@@ -34,7 +36,7 @@ export function FormularioCrear () {
     subirImagen(archivoCloud).then((imagen) => {
       const nuevoProducto = objetoPlantilla(e, imagen.url, imagenDefault)
       insertarDatos(nuevoProducto)
-      setPagina('/productos')
+      setStatusCreacion(true)
     })
   }
 
@@ -66,42 +68,48 @@ export function FormularioCrear () {
   }, [])
 
   return (
-    <div className='contenedor-form'>
-      <form className='form' onSubmit={enSubmit}>
-        <label htmlFor='' className='form__label label'>
-          Producto ID
-          <input type='text' name='productosId' id='' className='label__input' readOnly placeholder='El id se genera automaticamente' value={productoId} />
-        </label>
+    <>
+      <div className='contenedor-form'>
+        <form className='form' onSubmit={enSubmit}>
+          <label className='form__label label'>
+            Producto ID
+            <input type='text' name='productosId' id='' className='label__input' readOnly placeholder='El id se genera automaticamente' value={productoId} />
+          </label>
 
-        <label htmlFor='' className='form__label label'>
-          Nombre del Producto
-          <input type='text' name='nombre' id='' className='label__input' required />
-        </label>
+          <label htmlFor='nombreProducto' className='form__label label'>
+            Nombre del Producto
+            <input type='text' name='nombre' id='nombreProducto' className='label__input' required />
+          </label>
 
-        <label htmlFor='' className='form__label label'>
-          Precio
-          <input type='text' name='precio' id='' className='label__input' required />
-        </label>
+          <label htmlFor='precioProducto' className='form__label label'>
+            Precio
+            <input type='text' name='precio' id='precioProducto' className='label__input' required />
+          </label>
 
-        <label htmlFor='' className='form__label label'>
-          Stock
-          <input type='number' name='stock' id='' className='label__input' required />
-        </label>
+          <label htmlFor='stockProducto' className='form__label label'>
+            Stock
+            <input type='number' name='stock' id='stockProducto' className='label__input' required />
+          </label>
 
-        <label htmlFor='' className='form__label label'>
-          Categoria del Producto
-          <Categoria className='label__input' required />
-        </label>
+          <label className='form__label label'>
+            Categoria del Producto
+            <Categoria className='label__input' required />
+          </label>
 
-        <label htmlFor='' className='form__label label'>
-          Imagen del Producto
-          <input type='file' name='imagen' id='' className='label__input' accept='.jpg, .png, .jpeg, .webp' onChange={generarImagen} required />
-        </label>
+          <label htmlFor='imagenProducto' className='form__label label'>
+            Imagen del Producto
+            <input type='file' name='imagen' id='imagenProducto' className='label__input' accept='.jpg, .png, .jpeg, .webp' onChange={generarImagen} required />
+          </label>
 
-        <button className='form__btn' type='submit'>Crear Producto</button>
-      </form>
+          <button className='form__btn' type='submit'>Crear Producto</button>
+        </form>
       <img src={`${imagenPreview ? imagenPreview: imagenDefault}`} alt='imagen del producto' /> {/* eslint-disable-line */}
-    </div>
+      </div>
+
+      {
+        statusCreacion && <Notificacion status='correcto'>Producto Creado</Notificacion>
+      }
+    </>
 
   )
 }

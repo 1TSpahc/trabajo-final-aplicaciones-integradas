@@ -13,9 +13,11 @@ import { useLocation } from 'wouter'// hook para cambiar la ruta (url) de la pag
 import { objetoPlantilla } from '../../servicios/API/estructuraObj'// funcion para crear un objeto con los datos del formulario pra que sea enviado a la base de datos
 
 import { motion } from 'framer-motion'
+import { Notificacion } from '../notificacion'
 
 export function Formulario ({ producto, textoBtn }) {
   const [pagina, setPagina] = useLocation()
+  const [statusCreacion, setStatusCreacion] = useState(null)
 
   const [archivoCloud, setArchivoCloud] = useState(null)
   const [imagenPreview, setImagenPreview] = useState(null)
@@ -49,7 +51,7 @@ export function Formulario ({ producto, textoBtn }) {
         const productoEditado = objetoPlantilla(e, imagen.url, producto)
         const estatus = await editarDatos(productoEditado, producto.id)
         if (estatus === 204) {
-          setPagina('/productos')
+          setStatusCreacion(true)
         }
       })
       return
@@ -60,54 +62,59 @@ export function Formulario ({ producto, textoBtn }) {
     const estatus = await editarDatos(productoEditado, producto.id)
 
     if (estatus === 204) {
-      setPagina('/productos')
+      setStatusCreacion(true)
     }
   }
 
   const enEliminar = async () => {
     const estatus = await eliminarDatos(producto.id)
     if (estatus === 204) {
-      setPagina('/productos')
+      setStatusCreacion(true)
     }
   }
 
   return (
-    <motion.div className='contenedor-form' initial={{ opacity: 0, translateY: 20 }} animate={{ opacity: 1, translateY: 0 }}>
-      <form className='form' onSubmit={enSubmit}>
-        <label htmlFor='' className='form__label label'>
-          Producto ID
-          <input type='text' name='productosId' id='' className='label__input' readOnly defaultValue={producto?.id_producto} />
-        </label>
+    <>
+      <motion.div className='contenedor-form' initial={{ opacity: 0, translateY: 20 }} animate={{ opacity: 1, translateY: 0 }}>
+        <form className='form' onSubmit={enSubmit}>
+          <label htmlFor='' className='form__label label'>
+            Producto ID
+            <input type='text' name='productosId' id='' className='label__input' readOnly defaultValue={producto?.id_producto} />
+          </label>
 
-        <label htmlFor='' className='form__label label'>
-          Nombre del Producto
-          <input type='text' name='nombre' id='' className='label__input' required defaultValue={producto?.producto_nombre} />
-        </label>
+          <label htmlFor='' className='form__label label'>
+            Nombre del Producto
+            <input type='text' name='nombre' id='' className='label__input' required defaultValue={producto?.producto_nombre} />
+          </label>
 
-        <label htmlFor='' className='form__label label'>
-          Precio
-          <input type='text' name='precio' id='' className='label__input' required defaultValue={producto?.producto_precio} />
-        </label>
+          <label htmlFor='' className='form__label label'>
+            Precio
+            <input type='text' name='precio' id='' className='label__input' required defaultValue={producto?.producto_precio} />
+          </label>
 
-        <label htmlFor='' className='form__label label'>
-          Stock
-          <input type='number' name='stock' id='' className='label__input' required defaultValue={producto?.producto_stock} />
-        </label>
+          <label htmlFor='' className='form__label label'>
+            Stock
+            <input type='number' name='stock' id='' className='label__input' required defaultValue={producto?.producto_stock} />
+          </label>
 
-        <label htmlFor='' className='form__label label'>
-          Categoria del Producto
-          <Categoria className='label__input' select={producto.producto_categoria} required />
-        </label>
+          <label htmlFor='' className='form__label label'>
+            Categoria del Producto
+            <Categoria className='label__input' select={producto.producto_categoria} required />
+          </label>
 
-        <label htmlFor='' className='form__label label'>
-          Imagen del Producto
-          <input type='file' name='imagen' id='' className='label__input' accept='.jpg, .png, .jpeg, .webp' onChange={generarImagen} />
-        </label>
+          <label htmlFor='' className='form__label label'>
+            Imagen del Producto
+            <input type='file' name='imagen' id='' className='label__input' accept='.jpg, .png, .jpeg, .webp' onChange={generarImagen} />
+          </label>
 
-        <button className='form__btn' type='submit'>{textoBtn}</button>
-      </form>
+          <button className='form__btn' type='submit'>{textoBtn}</button>
+        </form>
       <img src={`${imagenPreview  ? imagenPreview  : producto?.producto_imagen}`} alt='' /> {/* eslint-disable-line */}
-    </motion.div>
+      </motion.div>
+      {
+        statusCreacion && <Notificacion status='correcto'>Accion realizada correctamente</Notificacion>
+      }
+    </>
 
   )
 }

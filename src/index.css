@@ -60,12 +60,15 @@ html,body{
     height: 100%;
     background-color: var(--body-bg);
     font-family: var(--font);
+    overflow-y: scroll;
 }
 
+body::-webkit-scrollbar{
+    width: 0;
+}
 #root{
     margin-left: var(--navegacion-width);
     padding: 20px;
-    overflow: hidden;
 }
 
 .desactivar #root{

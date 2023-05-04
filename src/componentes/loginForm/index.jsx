@@ -2,13 +2,13 @@ import { useLocation } from 'wouter'
 import { useAdmin } from '../../hooks/useAdmin'
 import { SubTitulo } from '../Textos/SubTitulos'
 import { useEffect, useState } from 'react'
-import { Error } from '../error'
 
 import './styles.css'
 import { guardardLocalStorage, obtenerLocalStorage } from '../../utilidades'
 import { Cargando } from '../Cargando'
 
 import { motion } from 'framer-motion'
+import { Notificacion } from '../notificacion'
 
 export function LoginForm () {
   const { cargando, admin } = useAdmin()
@@ -55,7 +55,7 @@ export function LoginForm () {
                   <input type='password' className='login__input' name='contrasena' required />
                 </label>
                 {
-                  error && <Error>Correo & Contraseña incorrecta</Error>
+                  error && <Notificacion status='error'>Correo & Contraseña incorrecta</Notificacion>
                 }
                 <button className='login__btn'>Ingresar</button>
               </form>

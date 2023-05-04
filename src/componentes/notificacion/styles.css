@@ -1,0 +1,23 @@
+.notificacion,.error,.correcto{
+    width: 400px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.error{
+    background-color: rgb(240, 118, 118);
+    border: 2px solid rgb(238, 71, 71);
+    color: #fff;
+}
+
+.correcto{
+    background-color: #02c29b;
+    border: 2px solid #0dd1aa;
+    color: #000;
+}
