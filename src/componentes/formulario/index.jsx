@@ -1,22 +1,19 @@
-
 /* Importamos algunos hooks de react js */
 
-import './styles.css'
-
 import { useEffect, useState } from 'react'
-import { crearImagenPreview, removerLocalStorage } from '../../utilidades' // function para crear una imagen preview y remover un item del localstorage
 
+import { crearImagenPreview, removerLocalStorage } from '../../utilidades' // function para crear una imagen preview y remover un item del localstorage
 import { Categoria } from '../categoria' // componente
 import { subirImagen } from '../../servicios/cloudinary' // servicio funcion para subir imagen a cloudinary
 import { editarDatos, eliminarDatos } from '../../servicios/API' // servicios de la api para editar y eliminar datos en la base de datos
-import { useLocation } from 'wouter'// hook para cambiar la ruta (url) de la pagina
 import { objetoPlantilla } from '../../servicios/API/estructuraObj'// funcion para crear un objeto con los datos del formulario pra que sea enviado a la base de datos
 
 import { motion } from 'framer-motion'
 import { Notificacion } from '../notificacion'
 
+import './styles.css'
+
 export function Formulario ({ producto, textoBtn }) {
-  const [pagina, setPagina] = useLocation()
   const [statusCreacion, setStatusCreacion] = useState(null)
 
   const [archivoCloud, setArchivoCloud] = useState(null)

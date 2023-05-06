@@ -1,9 +1,9 @@
+import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { Link } from 'wouter'
-import './styles.css'
 
-import { motion } from 'framer-motion'
 import { SubTitulo } from '../../componentes/Textos/SubTitulos'
+import './styles.css'
 
 export function PaginaNoEncontrada () {
   useEffect(() => {

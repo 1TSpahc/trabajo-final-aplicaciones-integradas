@@ -1,14 +1,15 @@
+import { motion } from 'framer-motion'
 import { useLocation } from 'wouter'
 import { useAdmin } from '../../hooks/useAdmin'
+import { useState } from 'react'
+
+import { guardardLocalStorage, obtenerLocalStorage } from '../../utilidades'
+
+import { Cargando } from '../Cargando'
+import { Notificacion } from '../notificacion'
 import { SubTitulo } from '../Textos/SubTitulos'
-import { useEffect, useState } from 'react'
 
 import './styles.css'
-import { guardardLocalStorage, obtenerLocalStorage } from '../../utilidades'
-import { Cargando } from '../Cargando'
-
-import { motion } from 'framer-motion'
-import { Notificacion } from '../notificacion'
 
 export function LoginForm () {
   const { cargando, admin } = useAdmin()

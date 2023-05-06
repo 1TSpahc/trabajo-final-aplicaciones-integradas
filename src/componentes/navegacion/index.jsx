@@ -1,12 +1,15 @@
-import './styles.css'
+import { useLocation } from 'wouter'
+import { useAdmin } from '../../hooks/useAdmin'
+
+import { editarCredencialesDelAdmin } from '../../servicios/API'
+import { objetoPlantillaAdmin } from '../../servicios/API/estructuraObj'
+
 import { Lista } from './lista'
 import { Extra } from './extra'
 import { IconoCerrarSesion } from '../iconos'
-import { useLocation } from 'wouter'
 import { removerLocalStorage } from '../../utilidades'
-import { objetoPlantillaAdmin } from '../../servicios/API/estructuraObj'
-import { useAdmin } from '../../hooks/useAdmin'
-import { editarCredencialesDelAdmin } from '../../servicios/API'
+
+import './styles.css'
 
 export function Navegacion () {
   const { admin } = useAdmin()

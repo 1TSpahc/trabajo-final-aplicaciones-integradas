@@ -1,9 +1,10 @@
-import './styles.css'
-import { Cargando } from '../../componentes/Cargando'
-import { ListaProductos } from '../../componentes/productosLista'
+import { motion } from 'framer-motion'
 import { useProductos } from '../../hooks/useProductos'
 
-import { motion } from 'framer-motion'
+import { Cargando } from '../../componentes/Cargando'
+import { ListaProductos } from '../../componentes/productosLista'
+
+import './styles.css'
 
 export function Productos () {
   const { cargando, productos, setProductos } = useProductos()

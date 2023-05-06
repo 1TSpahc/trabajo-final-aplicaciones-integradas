@@ -1,0 +1,13 @@
+.contenedor-tarjetas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.inicio__subtitle{
+    font-weight: 400;
+    padding: 40px 0;
+    text-align: center;
+    color: var(--paginas-titulos);
+}

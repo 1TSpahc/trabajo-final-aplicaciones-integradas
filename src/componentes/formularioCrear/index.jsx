@@ -1,4 +1,3 @@
-import { useLocation } from 'wouter' // con el useLocation podemos cambiar la ruta de la pagina
 import { useEffect, useState } from 'react'
 
 import { crearImagenPreview, removerLocalStorage } from '../../utilidades'
@@ -12,7 +11,6 @@ import { useProductos } from '../../hooks/useProductos'
 import { Notificacion } from '../notificacion'
 
 export function FormularioCrear () {
-  const [pagina, setPagina] = useLocation()
   const [statusCreacion, setStatusCreacion] = useState(null)
   const [activarBoton, setActivarBoton] = useState(true)
 

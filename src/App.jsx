@@ -1,7 +1,7 @@
 import { Route, Switch } from 'wouter'
 
-import './App.css'
 import { Navegacion } from './componentes/navegacion'
+
 import { Inicio } from './paginas/Inicio'
 import { Productos } from './paginas/Productos'
 import { Crear } from './paginas/Crear'

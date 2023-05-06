@@ -1,12 +1,13 @@
+// frame-motion
+import { motion } from 'framer-motion'
+
 import { Cargando } from '../../componentes/Cargando'
 import { SubTitulo } from '../../componentes/Textos/SubTitulos'
 import { FormularioCrear } from '../../componentes/formularioCrear'
 import { useAdmin } from '../../hooks/useAdmin'
 import { validarUsuario } from '../../utilidades'
-import './styles.css'
 
-// frame-motion
-import { motion } from 'framer-motion'
+import './styles.css'
 
 export function Crear () {
   const { cargando, admin } = useAdmin()

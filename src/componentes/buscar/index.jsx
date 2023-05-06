@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import './styles.css'
 import { useProductos } from '../../hooks/useProductos'
+
+import './styles.css'
 
 export function Buscar ({ estado }) {
   const [productoId, setProductoId] = useState('')

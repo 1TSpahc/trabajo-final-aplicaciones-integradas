@@ -1,0 +1,12 @@
+.tarjeta{
+    padding: 30px 60px;
+    background-color: var(--formulario-boton-bg);
+    border-radius: 5px;
+    transition: .5s;
+    color: var(--formulario-boton-texto);
+}
+
+.tarjeta:hover{
+    background-color: var(--formulario-boton-bg-hover);
+    color: var(--formulario-boton-bg-hover-texto);
+}

@@ -1,9 +1,10 @@
+import { motion } from 'framer-motion'
+
 import { SubTitulo } from '../Textos/SubTitulos'
 import { Filtrar } from '../filtrar'
 import { ProductosItem } from './productosItem'
-import './styles.css'
 
-import { motion } from 'framer-motion'
+import './styles.css'
 
 export function ListaProductos ({ productos, actualizar }) {
   return (

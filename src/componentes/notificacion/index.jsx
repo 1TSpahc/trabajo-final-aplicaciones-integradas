@@ -1,5 +1,5 @@
-import './styles.css'
 import { motion } from 'framer-motion'
+import './styles.css'
 
 export function Notificacion ({ children, status }) {
   return (

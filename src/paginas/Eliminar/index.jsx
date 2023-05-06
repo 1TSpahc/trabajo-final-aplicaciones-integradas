@@ -1,12 +1,12 @@
+// frame-motion
+import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { validarUsuario } from '../../utilidades'
+import { useAdmin } from '../../hooks/useAdmin'
+
 import { SubTitulo } from '../../componentes/Textos/SubTitulos'
 import { Buscar } from '../../componentes/buscar'
 import { Formulario } from '../../componentes/formulario'
-
-// frame-motion
-import { motion } from 'framer-motion'
-import { validarUsuario } from '../../utilidades'
-import { useAdmin } from '../../hooks/useAdmin'
 import { Cargando } from '../../componentes/Cargando'
 
 export function Eliminar () {
