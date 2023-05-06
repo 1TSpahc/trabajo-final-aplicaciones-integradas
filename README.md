@@ -1,6 +1,10 @@
 # **>Trabajo final< 🧑‍🎓** 
 ## **Intranet sport center**
-[Ir a tienda → ](https://sport-center-intranet.vercel.app/)
+Intranet  ➡
+[ Aqui ](https://sport-center-intranet.vercel.app/)
+
+Repositorio de la tienda  ➡
+[ Aqui ](https://github.com/1TSpahc/trabajo-final-aplicaciones-integradas-tienda)
 
 ![Primer Diseno](./screenshots/1.png)
 
