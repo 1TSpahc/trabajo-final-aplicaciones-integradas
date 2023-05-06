@@ -27,5 +27,4 @@ package-lock.json
 # variable de entorno
 .env
 
-README.md
 .vercel
